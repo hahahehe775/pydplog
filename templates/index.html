@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="">
+
+	<title>Pydplog</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./static/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="./static/grid.css" rel="stylesheet">
+
+	<link href="./static/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	</head>
+
+	<body>
+	<div class="container">
+
+		<div class="page-header">
+		<h1>pydplog</h1>
+		<p class="lead">为开发人员提供便捷的日志查询服务</p>
+		</div>
+
+		<div class="row">
+		<div class="col-md-2">
+
+			<form>
+
+				<div class="form-group">
+					<label for="servicename" >服务</label>
+					<select class="form-control variable" id="service">
+						<option>请选择服务</option>
+					</select>
+					<label for="warname">包名</label>
+					<select class="form-control variable" id="warname">
+						<option>请选择.war包名</option>
+					</select>
+					<label for="warname">日期</label>
+					<div class="input-group date form_date variable" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    	<input class="form-control" type="text" id="today" value="">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                	</div>
+					<label for="warname">时间</label>
+                	<div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                    	<input class="form-control" type="text" id="anhourago" value="">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                	</div>
+                	<div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                    	<input class="form-control" type="text" id="rightnow" value="">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                	</div>
+				</div>
+				<button type="submit" class="btn btn-default">提交查询</button>
+			</form>
+
+		</div>
+
+		<div class="col-md-10">
+			<div>
+
+
+			  <ul class="nav nav-pills" role="tablist">
+			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">crm01@192.168.5.150</a></li>
+			    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">crm02@192.168.5.150</a></li>
+			    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">crm01@192.168.5.200</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">crm02@192.168.5.200</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">crm02@192.168.5.200</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">crm02@192.168.5.200</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">crm02@192.168.5.200</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">crm02@192.168.5.200</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">crm02@192.168.5.200</a></li>
+			  </ul>
+
+
+			  <div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="home">
+			    	    <div class="logbox">
+						这是第1个日志</br>
+						</div>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="profile">
+			    	    <div class="logbox">
+						这是第2个日志</br>
+						这是第2个日志</br>
+						这是第2个日志</br>这是第2个日志</br>
+						这是第2个日志</br>
+						这是第2个日志</br>
+						这是第2个日志</br>
+						这是第2个日志</br>
+						这是第2个日志</br>
+						</div>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="messages">
+			    	    <div class="logbox">
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						这是第3个日志</br>
+						</div>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="settings">
+			    	    <div class="logbox">
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						这是第4个日志</br><br>
+						</div>
+			    </div>
+			    <button type="button" class="btn btn-info">打包下载日志</button>
+
+  				</div>
+			  </div>
+
+			</div>
+
+		</div>
+		</div>
+
+
+
+
+	</div> <!-- /container -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./static/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/service-warname-dropdown.js"></script>
+    <script src="./static/js/current-datetime.js"></script>
+    <script src="./static/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+    <script src="./static/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	$('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
+	</body>
+</html>
