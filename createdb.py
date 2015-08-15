@@ -1,0 +1,45 @@
+import sqlite3
+conn = sqlite3.connect('pydplog.db')
+cursor = conn.cursor()
+
+
+cursor.execute('create table service (service_id SMALLINT primary key, service_name VARCHAR(255))')
+cursor.execute('create table server (server_id SMALLINT primary key, server_ip VARCHAR(255))')
+cursor.execute('create table war (war_id SMALLINT primary key, war_name VARCHAR(255))')
+cursor.execute('create table instance (instance_id SMALLINT primary key, instance_name VARCHAR(255), service_id SMALLINT, server_id SMALLINT, war_id SMALLINT)')
+
+cursor.execute('insert into service (service_id, service_name) values (\'1\', \'CC\')')
+cursor.execute('insert into service (service_id, service_name) values (\'2\', \'CRM\')')
+
+cursor.execute('insert into server (server_id, server_ip) values (\'1\', \'10.249.5.150\')')
+cursor.execute('insert into server (server_id, server_ip) values (\'2\', \'10.249.5.151\')')
+cursor.execute('insert into server (server_id, server_ip) values (\'3\', \'10.249.5.152\')')
+cursor.execute('insert into server (server_id, server_ip) values (\'4\', \'10.249.5.153\')')
+
+cursor.execute('insert into war (war_id, war_name) values (\'1\', \'call-web.war\')')
+cursor.execute('insert into war (war_id, war_name) values (\'2\', \'cc-report-web.war\')')
+cursor.execute('insert into war (war_id, war_name) values (\'3\', \'ccStaticResources-web.war\')')
+cursor.execute('insert into war (war_id, war_name) values (\'4\', \'cc-sync-web.war\')')
+cursor.execute('insert into war (war_id, war_name) values (\'5\', \'DepponOrderSelect.war\')')
+cursor.execute('insert into war (war_id, war_name) values (\'6\', \'job-web.war\')')
+cursor.execute('insert into war (war_id, war_name) values (\'7\', \'solr.war\')')
+
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'1\', \'call-web01\', \'1\', \'1\', \'1\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'2\', \'call-web02\', \'1\', \'1\', \'1\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'3\', \'sync-web01\', \'1\', \'1\', \'4\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'4\', \'call-web01\', \'1\', \'2\', \'1\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'5\', \'call-web02\', \'1\', \'2\', \'1\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'6\', \'sync-web01\', \'1\', \'2\', \'4\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'7\', \'report-web\', \'1\', \'3\', \'2\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'8\', \'ccStaticResources\', \'1\', \'3\', \'3\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'9\', \'DepponOrderSelect\', \'1\', \'3\', \'5\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'10\', \'job-web\', \'1\', \'3\', \'6\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'11\', \'report-web\', \'1\', \'4\', \'2\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'12\', \'ccStaticResources\', \'1\', \'4\', \'3\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'13\', \'DepponOrderSelect\', \'1\', \'4\', \'5\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'14\', \'job-web\', \'1\', \'4\', \'6\')')
+cursor.execute('insert into instance (instance_id, instance_name, service_id, server_id, war_id) values (\'15\', \'solr\', \'1\', \'4\', \'7\')')
+
+cursor.close()
+conn.commit()
+conn.close()
