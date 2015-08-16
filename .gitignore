@@ -100,8 +100,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#Jboss Log Folder
-jbosslog/
-
-#Nginx Folder
-nginx/
+#Other files to ignore
+ignored/
