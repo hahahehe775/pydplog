@@ -23,7 +23,7 @@ window.onload = function(){
     for (var i = 0; i < data.length; i++)
     {
         var json = data[i];
-        var option = new Option(json.name, json.code, false, false);
+        var option = new Option(json.name, json.name, false, false);
         proSelect.add(option);
     }
     // 为proSelect绑定onChange事件
@@ -38,7 +38,7 @@ window.onload = function(){
         for (var i = 0; i < data.length; i++)
         {
             var json = data[i];
-            if (json.code == this.value)
+            if (json.name == this.value)
             {
                 // 取城市
                 var warname = json.warname;
@@ -46,7 +46,7 @@ window.onload = function(){
                 {
                     // 获取其中的json
                     var temp = warname[j];
-                    var option = new Option(temp.name, temp.code, false, false);
+                    var option = new Option(temp.name, temp.name, false, false);
                     citySelect.add(option);
                 }
             }

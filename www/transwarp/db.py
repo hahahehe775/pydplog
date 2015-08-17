@@ -4,9 +4,9 @@ def connect_cursor(db):
 	cursor = conn.cursor()
 	return cursor
 
-def connectionClose():
-	cursor.close()
-	conn.close()
+# def connectionClose():
+# 	cursor.close()
+# 	conn.close()
 
 # def connectCtx_select(func):
 # 	def wrapper(*args, **kw):

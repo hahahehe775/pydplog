@@ -1,6 +1,6 @@
-from flask import Flask
-import inspect
-from flask import render_template
+from flask import Flask, render_template, request
+from transwarp import getlocation
+from log import Log
 import os
 
 app = Flask(__name__)
@@ -8,14 +8,21 @@ app = Flask(__name__)
 # def hello_world():
 # 	return 'Hello World!'
 
-@app.route('/')
-def hello():
-    return render_template('index.html')
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        service_name = request.form['service']
+        warname_name = request.form['warname']
+        today = request.form['today']
+        anhourago = request.form['anhourago']
+        rightnow = request.form['rightnow']
+        locationList = getlocation.getlocation('./transwarp/pydplog.db', service_name, warname_name)
+    else:    
+        return render_template('index.html')
 
 # @app.route('/favicon.ico')
 # def favicon():
 #     return url_for('static', filename='favicon.ico')
 
 if __name__ == '__main__':
- 	app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
-#   print inspect.getsource(Bootstrap)
+  	app.run(host='0.0.0.0', port=8080, debug=True)
