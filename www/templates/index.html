@@ -74,9 +74,11 @@
 
 
 			  <ul class="nav nav-pills" role="tablist">
-                {% for instanceTitle in instanceTitles %}
+			    
+			    {% for instanceTitle in instanceTitles %}
     				<li><li role="presentation" {% if loop.index0 == 0  %} class="active" {% endif %}><a href="#{{ loop.index0 }}" aria-controls="{{ loop.index0 }}" role="tab" data-toggle="tab">{{ instanceTitle }}</a></li></li>
 				{% endfor %}
+			    
 			  </ul>
 
 

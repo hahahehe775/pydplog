@@ -48,8 +48,8 @@ class Log(object):
 			exportFile.close()
 
 def main():
-	cclog = Log('CC','10.249.5.150','call-web01','server.log','2015-08-12')
-	cclog.print_log("07:59:00","09:00:00")
+	cclog = Log('CC','10.249.5.150','call-web01', '2015-08-12','server.log')
+	print cclog.return_log("07:59:00","09:00:00")
 	# cclog.export_log("07:59:00","09:00:00")
 
 if __name__ == '__main__':
