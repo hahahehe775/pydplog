@@ -21,14 +21,19 @@ class Log(object):
 	def return_log(self,starttime="",endtime=""):
 		logcontent = ''
 		if (starttime is None) and (endtime is None):
-			for i in open(self.location+self.filename):
-				logcontent += i
-		else:
-			for i in open(self.location+self.filename):
-				logtime = i.split(" ")[1].split(",")[0]
-				if logtime > starttime and logtime < endtime:
+			with open(self.location+self.filename) as fopen:
+				for i in fopen:
 					logcontent += i
-		return logcontent
+			return logcontent
+		else:
+			with open(self.location+self.filename) as fopen:
+				for i in fopen:
+					if i == "\n":
+						continue
+					logtime = i.split(" ")[1].split(",")[0]
+					if logtime >= starttime and logtime <= endtime:
+						logcontent += i
+			return logcontent
 
 	def export_log(self,starttime="",endtime=""):
 		exportLocation = self.location+"/export/"
@@ -48,8 +53,8 @@ class Log(object):
 			exportFile.close()
 
 def main():
-	cclog = Log('CC','10.249.5.150','call-web01', '2015-08-12','server.log')
-	print cclog.return_log("07:59:00","09:00:00")
+	print Log('CC','10.249.5.150','call-web01', '2015-08-12','server.log').return_log("07:59","09:00")
+	# print cclog.return_log("07:59","09:00")
 	# cclog.export_log("07:59:00","09:00:00")
 
 if __name__ == '__main__':

@@ -83,65 +83,16 @@
 
 
 			  <div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="home">
+
+			  	{% for instanceLog in instanceLogs %}
+    			<div role="tabpanel" class="tab-pane {% if loop.index0 == 0  %} active {% endif %}" id="{{ loop.index0 }}">
 			    	    <div class="logbox">
-						这是第1个日志</br>
+						{{ instanceLog }}
 						</div>
 			    </div>
-			    <div role="tabpanel" class="tab-pane" id="profile">
-			    	    <div class="logbox">
-						这是第2个日志</br>
-						这是第2个日志</br>
-						这是第2个日志</br>这是第2个日志</br>
-						这是第2个日志</br>
-						这是第2个日志</br>
-						这是第2个日志</br>
-						这是第2个日志</br>
-						这是第2个日志</br>
-						</div>
-			    </div>
-			    <div role="tabpanel" class="tab-pane" id="messages">
-			    	    <div class="logbox">
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						这是第3个日志</br>
-						</div>
-			    </div>
-			    <div role="tabpanel" class="tab-pane" id="settings">
-			    	    <div class="logbox">
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						这是第4个日志</br><br>
-						</div>
-			    </div>
+				{% endfor %}
+				
+			  </div>
 			    <button type="button" class="btn btn-info">打包下载日志</button>
 
   				</div>

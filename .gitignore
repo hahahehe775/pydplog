@@ -102,3 +102,4 @@ $RECYCLE.BIN/
 
 #Other files to ignore
 ignored/
+jbosslog/
