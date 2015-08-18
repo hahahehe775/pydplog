@@ -1,3 +1,7 @@
+#! /usr/bin/env python2.7
+# -*- coding:utf-8-*-
+#coding=utf-8
+
 from flask import Flask, render_template, request
 from transwarp import getlocation
 from log import Log
@@ -23,7 +27,7 @@ def index():
             instanceTitle = j[1] + "@" + j[0]
             instanceTitles.append(instanceTitle)
             instanceLog = Log(service_name,j[0],j[1],today).return_log(anhourago,rightnow)
-            instanceLogs.append(instanceLog)
+            instanceLogs.append(instanceLog.decode('gbk'))
         return render_template('index.html', instanceTitles = instanceTitles, instanceLogs = instanceLogs)
     else:    
         return render_template('index.html')
