@@ -28,8 +28,6 @@ class Log(object):
 		else:
 			with open(self.location+self.filename) as fopen:
 				for i in fopen:
-					if i == "\n":
-						continue
 					logtime = i.split(" ")[1].split(",")[0]
 					if logtime >= starttime and logtime <= endtime:
 						logcontent += i
@@ -53,7 +51,7 @@ class Log(object):
 			exportFile.close()
 
 def main():
-	print Log('CC','10.249.5.150','call-web01', '2015-08-12','server.log').return_log("07:59","09:00")
+	print Log('CC','10.249.5.151','call-web02', '2015-08-12','server.log').return_log("07:59","09:00")
 	# print cclog.return_log("07:59","09:00")
 	# cclog.export_log("07:59:00","09:00:00")
 
