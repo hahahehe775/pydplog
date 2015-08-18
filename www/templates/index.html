@@ -90,10 +90,13 @@
 						{{ instanceLog }}
 						</div>
 			    </div>
+			    {% if loop.last %} 			  
+			    </div>
+			    <button type="button" class="btn btn-info">打包下载日志</button> 
+			    {% endif %}
 				{% endfor %}
 				
-			  </div>
-			    <button type="button" class="btn btn-info">打包下载日志</button>
+
 
   				</div>
 			  </div>

@@ -1,4 +1,5 @@
 from datetime import date
+import os
 
 class Log(object):
 	"""
@@ -8,10 +9,11 @@ class Log(object):
 
 	2015-08-13
 	"""
-	def __init__(self, service, serverip, instance, logdate="", filename="server.log"):
+	def __init__(self, service, serverip, instance, logdate, filename="server.log"):
 		self.service = service
 		self.serverip = serverip
 		self.instance = instance
+		self.logdate = logdate
 		if logdate >= str(date.today()):
 			self.filename = filename
 		else:
@@ -26,12 +28,9 @@ class Log(object):
 					logcontent += i
 			return logcontent
 		else:
-			with open(self.location+self.filename) as fopen:
-				for i in fopen:
-					logtime = i.split(" ")[1].split(",")[0]
-					if logtime >= starttime and logtime <= endtime:
-						logcontent += i
-			return logcontent
+			sedCommand = 'sed -n \'/'+self.logdate+' '+starttime+':/,/'+self.logdate+' '+endtime+':/p\' '+self.location+self.filename
+			logcontent = os.popen(sedCommand)
+			return logcontent.read()
 
 	def export_log(self,starttime="",endtime=""):
 		exportLocation = self.location+"/export/"
@@ -51,7 +50,7 @@ class Log(object):
 			exportFile.close()
 
 def main():
-	print Log('CC','10.249.5.151','call-web02', '2015-08-12','server.log').return_log("07:59","09:00")
+	Log('CC','10.249.5.151','call-web02', '2015-08-12','server.log').return_log("08:30","08:50")
 	# print cclog.return_log("07:59","09:00")
 	# cclog.export_log("07:59:00","09:00:00")
 
