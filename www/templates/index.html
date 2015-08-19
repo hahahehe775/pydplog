@@ -87,7 +87,9 @@
 			  	{% for instanceLog in instanceLogs %}
     			<div role="tabpanel" class="tab-pane {% if loop.index0 == 0  %} active {% endif %}" id="{{ loop.index0 }}">
 			    	    <div class="logbox">
-						{{ instanceLog }}
+			    	    {% for logline in instanceLog %}
+			    	    {{ logline }}<br />
+			    	    {% endfor %}
 						</div>
 			    </div>
 			    {% if loop.last %} 			  

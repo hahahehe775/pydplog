@@ -27,7 +27,7 @@ def index():
             instanceTitle = j[1] + "@" + j[0]
             instanceTitles.append(instanceTitle)
             instanceLog = Log(service_name,j[0],j[1],today).return_log(anhourago,rightnow)
-            instanceLogs.append(instanceLog.decode('gbk'))
+            instanceLogs.append(instanceLog)
         return render_template('index.html', instanceTitles = instanceTitles, instanceLogs = instanceLogs)
     else:    
         return render_template('index.html')
